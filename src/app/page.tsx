@@ -1,6 +1,7 @@
 import { metricsData } from "@/data/metrics";
 import MetricCard from "@/components/metrics/MetricCard";
 import SalesChart from "@/components/charts/SalesChart";
+import TopProducts from "@/components/products/TopProducts";
 
 export default function Home() {
   return (
@@ -21,9 +22,11 @@ export default function Home() {
 
 
       <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-
-        <div className="lg:col-span-3">
+        <div className="lg:col-span-2">
           <SalesChart />
+        </div>
+        <div className="lg:col-span-1">
+          <TopProducts />
         </div>
       </div>
     </div>
