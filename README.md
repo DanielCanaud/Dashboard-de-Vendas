@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DashPro - Dashboard de Vendas Profissional
 
-## Getting Started
+Uma aplicação de dashboard de vendas moderna, construída com foco em alta conversão, design limpo e arquitetura escalável. Desenvolvida com uma abordagem **Mobile First**, garantindo uma experiência fluida em qualquer dispositivo.
 
-First, run the development server:
+##  Tecnologias e Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Este projeto foi construído utilizando as ferramentas mais modernas do ecossistema front-end:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Framework:** [Next.js 14] (App Router)
+* **Linguagem:** [TypeScript] (Tipagem rigorosa e Clean Code)
+* **Interface:** [React]
+* **Estilização:** [Tailwind CSS] (Utilitários e design responsivo)
+* **Animações:** [Framer Motion] (Transições fluidas e feedback visual)
+* **Gráficos:** [Recharts] (Visualização de dados dinâmica)
+* **Ícones:** [Lucide React]
+* **Utilitários:** `clsx`, `tailwind-merge`, `class-variance-authority` (Gerenciamento de classes e variantes)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##  Principais Funcionalidades
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+* **Visão Geral de KPIs:** Cards animados com contagem progressiva e indicadores de crescimento.
+* **Gráfico de Receita vs. Meta:** Visualização em área interativa com Tooltips customizados e formatação de moeda local (BRL).
+* **Ranking de Produtos:** Lista dos itens mais vendidos com barras de progresso animadas.
+* **Tabela de Transações:** Histórico de movimentações com rolagem horizontal em telas menores e *badges* semânticas de status.
+* **Layout Responsivo:** Sidebar colapsável no mobile com *overlay* de foco e fechamento automático na navegação.
 
-## Learn More
+##  Estrutura do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+A arquitetura foi pensada para manter a separação de responsabilidades e facilitar a manutenção:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+src/
+├── app/               # Rotas e layouts principais do Next.js
+├── components/        # Componentes visuais
+│   ├── charts/        # Gráficos (Recharts)
+│   ├── layout/        # Elementos estruturais (Sidebar, Header, Layout Wrapper)
+│   ├── metrics/       # Cards de KPIs
+│   ├── products/      # Componentes de listagem e ranking
+│   ├── transactions/  # Tabelas de dados
+│   └── ui/            # Elementos de interface reutilizáveis (Badges, etc.)
+├── data/              # Dados mockados para simulação
+├── hooks/             # Custom Hooks (ex: useCountAnimation)
+├── types/             # Interfaces TypeScript (Contratos de dados)
+└── utils/             # Funções utilitárias (Formatação, união de classes CSS)
