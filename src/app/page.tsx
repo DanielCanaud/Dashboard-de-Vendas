@@ -1,5 +1,6 @@
 import { metricsData } from "@/data/metrics";
 import MetricCard from "@/components/metrics/MetricCard";
+import SalesChart from "@/components/charts/SalesChart";
 
 export default function Home() {
   return (
@@ -11,10 +12,19 @@ export default function Home() {
         </p>
       </div>
 
+
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {metricsData.map((metric, index) => (
           <MetricCard key={metric.id} metric={metric} index={index} />
         ))}
+      </div>
+
+
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+
+        <div className="lg:col-span-3">
+          <SalesChart />
+        </div>
       </div>
     </div>
   );
