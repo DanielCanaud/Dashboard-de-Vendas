@@ -2,10 +2,11 @@ import { metricsData } from "@/data/metrics";
 import MetricCard from "@/components/metrics/MetricCard";
 import SalesChart from "@/components/charts/SalesChart";
 import TopProducts from "@/components/products/TopProducts";
+import TransactionsTable from "@/components/transactions/TransactionsTable";
 
 export default function Home() {
   return (
-    <div className="space-y-8 animate-in fade-in duration-500">
+    <div className="space-y-8 animate-in fade-in duration-500 pb-8">
       <div>
         <h1 className="text-2xl font-bold text-slate-900">Visão Geral</h1>
         <p className="text-sm text-slate-500 mt-1">
@@ -28,6 +29,11 @@ export default function Home() {
         <div className="lg:col-span-1">
           <TopProducts />
         </div>
+      </div>
+
+
+      <div>
+        <TransactionsTable />
       </div>
     </div>
   );
