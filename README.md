@@ -1,43 +1,234 @@
-# DashPro - Dashboard de Vendas Profissional
+# Dashboard de Vendas
 
-Uma aplicação de dashboard de vendas moderna, construída com foco em alta conversão, design limpo e arquitetura escalável. Desenvolvida com uma abordagem **Mobile First**, garantindo uma experiência fluida em qualquer dispositivo.
+Dashboard moderno para análise de vendas construído com **Next.js, React, TypeScript, Tailwind CSS e Recharts**, focado em visualização de métricas, performance e experiência do usuário.
 
-##  Tecnologias e Stack
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white)
 
-Este projeto foi construído utilizando as ferramentas mais modernas do ecossistema front-end:
+---
 
-* **Framework:** [Next.js 14] (App Router)
-* **Linguagem:** [TypeScript] (Tipagem rigorosa e Clean Code)
-* **Interface:** [React]
-* **Estilização:** [Tailwind CSS] (Utilitários e design responsivo)
-* **Animações:** [Framer Motion] (Transições fluidas e feedback visual)
-* **Gráficos:** [Recharts] (Visualização de dados dinâmica)
-* **Ícones:** [Lucide React]
-* **Utilitários:** `clsx`, `tailwind-merge`, `class-variance-authority` (Gerenciamento de classes e variantes)
+## Funcionalidades Principais
 
-##  Principais Funcionalidades
+- **Dashboard Overview** — Visão geral dos principais indicadores de negócio
+- **KPIs em tempo real** — Receita, pedidos, clientes e conversão
+- **Gráfico de Vendas** — Comparação visual de desempenho e evolução das vendas
+- **Top Produtos** — Ranking dos produtos com melhor performance
+- **Histórico de Transações** — Tabela organizada com status e detalhes das vendas
+- **Animações Suaves** — Contadores animados utilizando Framer Motion
+- **Design Responsivo** — Experiência otimizada para desktop, tablet e mobile
+- **Arquitetura Escalável** — Separação entre componentes, dados, tipos e utilitários
 
-* **Visão Geral de KPIs:** Cards animados com contagem progressiva e indicadores de crescimento.
-* **Gráfico de Receita vs. Meta:** Visualização em área interativa com Tooltips customizados e formatação de moeda local (BRL).
-* **Ranking de Produtos:** Lista dos itens mais vendidos com barras de progresso animadas.
-* **Tabela de Transações:** Histórico de movimentações com rolagem horizontal em telas menores e *badges* semânticas de status.
-* **Layout Responsivo:** Sidebar colapsável no mobile com *overlay* de foco e fechamento automático na navegação.
+---
 
-##  Estrutura do Projeto
+# Como Rodar
 
-A arquitetura foi pensada para manter a separação de responsabilidades e facilitar a manutenção:
+## Pré-requisitos
+
+- Node.js 20.0 ou superior
+- NPM ou Yarn
+
+### Instalação
+
+```bash
+# Clone o repositório
+git clone https://github.com/DanielCanaud/Dashboard-de-Vendas
+
+cd dashboard-vendas
+
+# Instale as dependências
+npm install
+
+# ou
+
+yarn install
+```
+
+### Desenvolvimento
+
+```bash
+# Inicie o servidor de desenvolvimento
+npm run dev
+
+# ou
+
+yarn dev
+```
+
+Acesse:
 
 ```text
-src/
-├── app/               # Rotas e layouts principais do Next.js
-├── components/        # Componentes visuais
-│   ├── charts/        # Gráficos (Recharts)
-│   ├── layout/        # Elementos estruturais (Sidebar, Header, Layout Wrapper)
-│   ├── metrics/       # Cards de KPIs
-│   ├── products/      # Componentes de listagem e ranking
-│   ├── transactions/  # Tabelas de dados
-│   └── ui/            # Elementos de interface reutilizáveis (Badges, etc.)
-├── data/              # Dados mockados para simulação
-├── hooks/             # Custom Hooks (ex: useCountAnimation)
-├── types/             # Interfaces TypeScript (Contratos de dados)
-└── utils/             # Funções utilitárias (Formatação, união de classes CSS)
+http://localhost:3000
+```
+
+### Build para Produção
+
+```bash
+# Gerar build otimizado
+npm run build
+
+# Iniciar servidor de produção
+npm run start
+```
+
+### Linting
+
+```bash
+# Verificar qualidade do código
+npm run lint
+```
+
+---
+
+## Estrutura do Projeto
+
+```text
+dashboard-vendas/
+├── src/
+│
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── components/
+│   ├── charts/
+│   │   └── SalesChart.tsx
+│   │
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── MainLayout.tsx
+│   │   └── Sidebar.tsx
+│   │
+│   ├── metrics/
+│   │   └── MetricCard.tsx
+│   │
+│   ├── products/
+│   │   └── TopProducts.tsx
+│   │
+│   ├── transactions/
+│   │   └── TransactionsTable.tsx
+│   │
+│   └── ui/
+│       └── Badge.tsx
+│
+├── data/
+│   ├── metrics.ts
+│   ├── products.ts
+│   ├── salesChart.ts
+│   └── transactions.ts
+│
+├── hooks/
+│   └── useCountAnimation.ts
+│
+├── types/
+│   ├── metrics.ts
+│   ├── product.ts
+│   ├── sales.ts
+│   └── transaction.ts
+│
+├── utils/
+│   ├── cn.ts
+│   └── formatting.ts
+│
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
+---
+
+## Stack
+
+- **Next.js 16.2.7** — Framework React com renderização otimizada
+- **React 19.2.4** — Biblioteca para construção da interface
+- **TypeScript** — Tipagem estática para maior segurança
+- * **CSS3** — Estilização moderna e responsiva
+- **Recharts** — Biblioteca para gráficos interativos
+- **Framer Motion** — Animações fluidas e performáticas
+- **Lucide React** — Ícones modernos e leves
+
+### Dependências Principais
+
+```json
+{
+  "next": "16.2.7",
+  "react": "19.2.4",
+  "react-dom": "19.2.4",
+  "recharts": "^3.8.1",
+  "framer-motion": "^12.40.0",
+  "lucide-react": "^1.17.0",
+  "clsx": "^2.1.1",
+  "class-variance-authority": "^0.7.1",
+  "tailwind-merge": "^3.6.0"
+}
+```
+
+---
+
+## Componentes Principais
+
+### Layout
+
+- Sidebar responsiva
+- Header com navegação
+- Estrutura organizada para expansão futura
+
+### Métricas
+
+- Cards de indicadores
+- Valores formatados
+- Contadores animados
+- Destaques visuais para crescimento e desempenho
+
+### Visualização de Dados
+
+- Gráfico de vendas utilizando Recharts
+- Comparação de métricas ao longo do tempo
+- Interface limpa e intuitiva
+
+### Produtos
+
+- Ranking dos produtos mais vendidos
+- Indicadores de desempenho
+- Visualização rápida de resultados
+
+### Transações
+
+- Tabela responsiva
+- Status das vendas
+- Informações detalhadas de cada transação
+
+---
+
+## Otimizações
+
+### Performance
+
+- Renderização otimizada com Next.js
+- Componentização reutilizável
+- Code Splitting automático
+- Hooks customizados para melhor organização
+
+### Experiência do Usuário
+
+- Animações suaves com Framer Motion
+- Interface responsiva
+- Navegação intuitiva
+- Feedback visual para ações e métricas
+
+### Escalabilidade
+
+- Estrutura modular
+- Tipagem centralizada
+- Dados desacoplados da interface
+- Fácil integração com APIs reais
+
+---
+
+## Autor
+
+Daniel Canaud
+
+GitHub: https://github.com/DanielCanaud
